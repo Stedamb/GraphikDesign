@@ -1,34 +1,36 @@
 import {useState, useRef, Suspense} from "react";
 import {Canvas, useFrame} from "@react-three/fiber";
-import {Points, PointMaterial, Preload} from "@react-three/drei";
+import {Points, PointMaterial, Preload, useGLTF, OrbitControls} from "@react-three/drei";
 import * as random from "maath/random/dist/maath-random.esm";
 
-const Stars = (props) => {
-    const ref = useRef();
-    const [sphere] = useState(() => random.inSphere(new Float32Array(5000), {radius: 1.2}));
+// const Stars = (props) => {
+//     const ref = useRef();
+//     const [sphere] = useState(() => random.inSphere(new Float32Array(5000), {radius: 1.2}));
 
-    useFrame((state, delta) => {
-        ref.current.rotation.x -= delta / 10;
-        ref.current.rotation.y -= delta / 15;
-    });
+//     useFrame((state, delta) => {
+//         ref.current.rotation.x -= delta / 10;
+//         ref.current.rotation.y -= delta / 15;
+//     });
 
-    return (
-        <group rotation={[
-            0, 0, Math.PI / 4
-        ]}>
-            <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
-                <PointMaterial
-                    transparent
-                    color='#000000'
-                    size={0.005}
-                    sizeAttenuation={true}
-                    depthWrite={false}/>
-            </Points>
-        </group>
-    );
-};
-const Sphere = () => {
+//     return (
+//         <group rotation={[
+//             0, 0, Math.PI / 4
+//         ]}>
+//             <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
+//                 <PointMaterial
+//                     transparent
+//                     color='#000000'
+//                     size={0.005}
+//                     sizeAttenuation={true}
+//                     depthWrite={false}/>
+//             </Points>
+//         </group>
+//     );
+// };
+
+const Voxel = () => {
     const mesh = useRef();
+    const voxel = useGLTF("./voxel.gltf");
 
     useFrame(() => {
         if (!mesh.current) {
@@ -50,9 +52,13 @@ const Sphere = () => {
                 castShadow
                 shadow-mapSize={1024}/>
             {/* <pointLight intensity={2}/> */}
-            <sphereGeometry  args={[1, 32]}/>
+            <primitive
+                object={voxel.scene}
+                scale={0.1}
+                position={[0,-3,0]}
+                rotation={[0, 2.5, 0]}
+            />
             <meshStandardMaterial color='green' wireframe/>
-            {/* 477998 */}
         </mesh>
     )
 
@@ -60,13 +66,18 @@ const Sphere = () => {
 
 const StarsCanvas = () => {
     return (
-        <div className='w-full h-screen absolute inset-0 z-[-1]'>
+        <div className='w-full h-screen absolute inset-0 '>
             <Canvas camera={{
-                position: [0, 0, 1]
+                position: [0, 0, 5]
             }}>
                 <Suspense fallback={null}>
-                    <Stars/>
-                    {/* <Sphere/> */}
+                    <OrbitControls
+                        enableZoom={false}
+                        // maxPolarAngle={Math.PI / 2}
+                        // minPolarAngle={Math.PI / 2}
+                        />
+                <Voxel/>
+                    {/* <Stars/> */}
                 </Suspense>
 
                 <Preload all/>
