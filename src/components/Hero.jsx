@@ -7,7 +7,7 @@ const Hero = () => {
                 className={`absolute inset-0 top-[120px] max-w-7xl flex flex-row items-start justify-center`}>
 
                 <div>
-                    <h1 className="space-grotesk h-1">
+                    <h1 className="space-grotesk text-xl">
                         Your next pokémon experience
                     </h1>
                 </div>

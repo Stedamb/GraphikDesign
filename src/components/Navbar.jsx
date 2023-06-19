@@ -80,7 +80,7 @@ const Navbar = () => {
                     ))}
                 </ul> */}
 
-                <div className='sm:hidden flex flex-1 justify-end items-center'>
+                <div className='hidden flex flex-1 justify-end items-center'>
                     <button onClick={onClick}>
                         <svg width='24' height='24' viewBox='0 0 24 24'>
                             <motion.path
