@@ -63,7 +63,7 @@ const Navbar = () => {
                 }}>
                     {/* <img src={logo} alt='logo' className='w-9 h-9 object-contain'/> */}
                     <p className='text-black text-[18px]'>
-                        <span className='sm:block'>GraphikDesign</span>
+                        <span className='sm:block'>Blockémon</span>
                     </p>
                 </Link>
 
