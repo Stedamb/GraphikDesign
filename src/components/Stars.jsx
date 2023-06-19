@@ -68,7 +68,7 @@ const StarsCanvas = () => {
     return (
         <div className='w-full h-screen absolute inset-0 '>
             <Canvas camera={{
-                position: [0, 0, 5]
+                position: [0, 0, 6]
             }}>
                 <Suspense fallback={null}>
                     <OrbitControls
