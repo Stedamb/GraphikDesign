@@ -30,7 +30,7 @@ const Stars = (props) => {
 
 const Voxel = () => {
     const mesh = useRef();
-    const voxel = useGLTF("./voxel.gltf");
+    const voxel = useGLTF("./pikachu.gltf");
 
     useFrame(() => {
         if (!mesh.current) {
@@ -54,7 +54,7 @@ const Voxel = () => {
             <primitive
                 object={voxel.scene}
                 scale={0.1}
-                position={[0,-3,0]}
+                position={[0,-2.5,0]}
                 rotation={[0, 2.5, 0]}
             />
         </mesh>
@@ -62,26 +62,29 @@ const Voxel = () => {
 
 }
 
-const FirstCanvas = () => {
+const SecondCanvas = () => {
     return (
-        <div className='w-full h-screen absolute inset-0'>
-            <Canvas camera={{
-                position: [0, 0, 6]
-            }}>
-                <Suspense fallback={null}>
-                    <OrbitControls
-                        enableZoom={false}
-                        // maxPolarAngle={Math.PI / 2}
-                        // minPolarAngle={Math.PI / 2}
-                        />
-                <Voxel/>
+        <div className="w-screen h-screen flex bg-gray-900 absolute left-0">
+            <div className='w-full'>
+                <Canvas camera={{
+                    position: [0, 0, 5]
+                }}>
+                    <Suspense fallback={null}>
+                        <OrbitControls
+                            enableZoom={false}
+                            // maxPolarAngle={Math.PI / 2}
+                            // minPolarAngle={Math.PI / 2}
+                            />
+                    <Voxel/>
                     <Stars/>
-                </Suspense>
+                    </Suspense>
 
-                <Preload all/>
-            </Canvas>
+                    <Preload all/>
+                </Canvas>
+            </div>
+
         </div>
     );
 };
 
-export default FirstCanvas;
+export default SecondCanvas;
