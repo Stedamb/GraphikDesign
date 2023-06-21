@@ -1,4 +1,5 @@
 import {useState, useRef, Suspense} from "react";
+import { SectionWrapper } from "../hoc";
 import {Canvas, useFrame} from "@react-three/fiber";
 import {Points, PointMaterial, Preload, useGLTF, OrbitControls} from "@react-three/drei";
 import * as random from "maath/random/dist/maath-random.esm";
@@ -30,7 +31,7 @@ const Stars = (props) => {
 
 const Voxel = () => {
     const mesh = useRef();
-    const voxel = useGLTF("./pikachu.gltf");
+    const voxel = useGLTF("./grass.gltf");
 
     useFrame(() => {
         if (!mesh.current) {
@@ -62,9 +63,9 @@ const Voxel = () => {
 
 }
 
-const SecondCanvas = () => {
+const Grass = () => {
     return (
-        <div className="w-screen h-screen flex bg-gray-900 absolute left-0">
+        <div className="w-screen h-screen flex bg-green-500 absolute left-0">
             <div className='w-full'>
                 <Canvas camera={{
                     position: [0, 0, 5]
@@ -87,4 +88,4 @@ const SecondCanvas = () => {
     );
 };
 
-export default SecondCanvas;
+export default SectionWrapper(Grass, "grass");
