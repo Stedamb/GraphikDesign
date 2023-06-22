@@ -6,7 +6,7 @@ import * as random from "maath/random/dist/maath-random.esm";
 
 const Stars = (props) => {
     const ref = useRef();
-    const [sphere] = useState(() => random.inSphere(new Float32Array(500), {radius: 12}));
+    const [sphere] = useState(() => random.inSphere(new Float32Array(200), {radius: 12}));
 
     useFrame((state, delta) => {
         ref.current.rotation.x -= delta / 10;
@@ -20,8 +20,8 @@ const Stars = (props) => {
             <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
                 <PointMaterial
                     transparent
-                    color='#005'
-                    size={0.2}
+                    color='#bbb'
+                    size={0.08}
                     sizeAttenuation={true}
                     depthWrite={false}/>
             </Points>
@@ -31,7 +31,7 @@ const Stars = (props) => {
 
 const Voxel = () => {
     const mesh = useRef();
-    const voxel = useGLTF("./water.gltf");
+    const voxel = useGLTF("./Pikachu2.gltf");
 
     useFrame(() => {
         if (!mesh.current) {
@@ -63,9 +63,9 @@ const Voxel = () => {
 
 }
 
-const Water = () => {
+const CallToAction = () => {
     return (
-        <div className="w-screen h-screen flex bg-blue-600 absolute left-0">
+        <div className="w-screen h-screen flex bg-gray-900 absolute left-0">
             <div className='w-full'>
                 <Canvas camera={{
                     position: [0, 0, 5]
@@ -76,7 +76,7 @@ const Water = () => {
                             // maxPolarAngle={Math.PI / 2}
                             // minPolarAngle={Math.PI / 2}
                             />
-                    <Voxel/>
+                    {/* <Voxel/> */}
                     <Stars/>
                     </Suspense>
 
@@ -88,4 +88,4 @@ const Water = () => {
     );
 };
 
-export default SectionWrapper(Water, "water");
+export default SectionWrapper(CallToAction, "cta");

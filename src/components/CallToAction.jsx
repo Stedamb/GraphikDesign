@@ -6,7 +6,7 @@ import * as random from "maath/random/dist/maath-random.esm";
 
 const Stars = (props) => {
     const ref = useRef();
-    const [sphere] = useState(() => random.inSphere(new Float32Array(2000), {radius: 12}));
+    const [sphere] = useState(() => random.inSphere(new Float32Array(200), {radius: 12}));
 
     useFrame((state, delta) => {
         ref.current.rotation.x -= delta / 10;
@@ -31,7 +31,7 @@ const Stars = (props) => {
 
 const Voxel = () => {
     const mesh = useRef();
-    const voxel = useGLTF("./pikachu2.gltf");
+    const voxel = useGLTF("./Pikachu2.gltf");
 
     useFrame(() => {
         if (!mesh.current) {
@@ -71,12 +71,12 @@ const CallToAction = () => {
                     position: [0, 0, 5]
                 }}>
                     <Suspense fallback={null}>
-                        <OrbitControls
+                        {/* <OrbitControls
                             enableZoom={false}
                             // maxPolarAngle={Math.PI / 2}
                             // minPolarAngle={Math.PI / 2}
-                            />
-                    <Voxel/>
+                            /> */}
+                    {/* <Voxel/> */}
                     <Stars/>
                     </Suspense>
 

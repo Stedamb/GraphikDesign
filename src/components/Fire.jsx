@@ -6,7 +6,7 @@ import * as random from "maath/random/dist/maath-random.esm";
 
 const Stars = (props) => {
     const ref = useRef();
-    const [sphere] = useState(() => random.inSphere(new Float32Array(2000), {radius: 12}));
+    const [sphere] = useState(() => random.inSphere(new Float32Array(500), {radius: 12}));
 
     useFrame((state, delta) => {
         ref.current.rotation.x -= delta / 10;
@@ -20,8 +20,8 @@ const Stars = (props) => {
             <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
                 <PointMaterial
                     transparent
-                    color='#bbb'
-                    size={0.08}
+                    color='#500'
+                    size={0.2}
                     sizeAttenuation={true}
                     depthWrite={false}/>
             </Points>
@@ -31,7 +31,7 @@ const Stars = (props) => {
 
 const Voxel = () => {
     const mesh = useRef();
-    const voxel = useGLTF("./fire.gltf");
+    const voxel = useGLTF("./Fuoco.gltf");
 
     useFrame(() => {
         if (!mesh.current) {
@@ -55,7 +55,7 @@ const Voxel = () => {
             <primitive
                 object={voxel.scene}
                 scale={0.1}
-                position={[0,-2.5,0]}
+                position={[0,-3.5,0]}
                 rotation={[0, 2.5, 0]}
             />
         </mesh>
@@ -68,7 +68,7 @@ const Fire = () => {
         <div className="w-screen h-screen flex bg-red-600 absolute left-0">
             <div className='w-full'>
                 <Canvas camera={{
-                    position: [0, 0, 5]
+                    position: [0, 0, 7]
                 }}>
                     <Suspense fallback={null}>
                         <OrbitControls

@@ -31,7 +31,7 @@ const Stars = (props) => {
 
 const Voxel = () => {
     const mesh = useRef();
-    const voxel = useGLTF("./pikachu.gltf");
+    const voxel = useGLTF("./Pikachu.gltf");
 
     useFrame(() => {
         if (!mesh.current) {
@@ -85,4 +85,4 @@ const FirstCanvas = () => {
     );
 };
 
-export default FirstCanvas;
+export default SectionWrapper(FirstCanvas, "hero");
