@@ -31,7 +31,7 @@ const Stars = (props) => {
 
 const Voxel = () => {
     const mesh = useRef();
-    const voxel = useGLTF("./Pikachu2.gltf");
+    // const voxel = useGLTF("./Pikachu2.gltf");
 
     useFrame(() => {
         if (!mesh.current) {
@@ -52,12 +52,12 @@ const Voxel = () => {
                 intensity={1}
                 castShadow
                 shadow-mapSize={1024}/>
-            <primitive
+            {/* <primitive
                 object={voxel.scene}
                 scale={0.1}
                 position={[0,-2.5,0]}
                 rotation={[0, 2.5, 0]}
-            />
+            /> */}
         </mesh>
     )
 
