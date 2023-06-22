@@ -31,7 +31,7 @@ const Stars = (props) => {
 
 const Voxel = () => {
     const mesh = useRef();
-    const voxel = useGLTF("./Pikachu.gltf");
+    const voxel = useGLTF("./Pokemon.gltf");
 
     useFrame(() => {
         if (!mesh.current) {
