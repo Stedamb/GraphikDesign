@@ -9,7 +9,7 @@ const Section = () => {
 
                 <div className='bg-gray-900 rounded-full pt-8 pb-3 px-8'>
                     <a href='#cta' className="w-full h-full space-grotesk text-xl text-white">
-                        Entra nel metaverso pokèmon
+                        Enter the Pokémon metaverse
                         <img className='mx-auto mt-3' width="35" height="35" src="https://img.icons8.com/ios/50/FFFFFF/circled-up-right.png" alt="circled-up-right"/>
                     </a>
                 </div>

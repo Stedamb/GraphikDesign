@@ -2,11 +2,18 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    background-color: #111827;
+    padding-bottom: 4rem;
+
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+
 }
 
 .logo {

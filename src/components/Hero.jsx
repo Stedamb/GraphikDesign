@@ -10,7 +10,7 @@ const Hero = () => {
 
                 <div>
                     <h1 className="space-grotesk text-3xl">
-                        Your next pokémon experience
+                        Your next Pokémon experience
                     </h1>
                     <div className="bg-gray-900 text-white my-5 p-3 text-md rounded-full">
                         Choose your starter

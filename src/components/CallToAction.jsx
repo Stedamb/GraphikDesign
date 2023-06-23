@@ -31,7 +31,7 @@ const Stars = (props) => {
 
 const Voxel = () => {
     const mesh = useRef();
-    // const voxel = useGLTF("./Pikachu2.gltf");
+    const voxel = useGLTF("./Reward.gltf");
 
     useFrame(() => {
         if (!mesh.current) {
@@ -52,12 +52,12 @@ const Voxel = () => {
                 intensity={1}
                 castShadow
                 shadow-mapSize={1024}/>
-            {/* <primitive
+            <primitive
                 object={voxel.scene}
                 scale={0.1}
-                position={[0,-2.5,0]}
+                position={[0,-6.5,0]}
                 rotation={[0, 2.5, 0]}
-            /> */}
+            />
         </mesh>
     )
 
@@ -68,20 +68,23 @@ const CallToAction = () => {
         <div className="w-screen h-screen flex bg-gray-900 absolute left-0">
             <div className='w-full'>
                 <Canvas camera={{
-                    position: [0, 0, 5]
+                    position: [0, 0, 12]
                 }}>
                     <Suspense fallback={null}>
-                        {/* <OrbitControls
+                        <OrbitControls
                             enableZoom={false}
                             // maxPolarAngle={Math.PI / 2}
                             // minPolarAngle={Math.PI / 2}
-                            /> */}
-                    {/* <Voxel/> */}
+                            />
+                    <Voxel/>
                     <Stars/>
                     </Suspense>
 
                     <Preload all/>
                 </Canvas>
+                <a href="#hero" className="bg-black border text-white my-5 p-8 text-xl rounded-full mb-10">
+                        Go up
+                    </a>
             </div>
 
         </div>

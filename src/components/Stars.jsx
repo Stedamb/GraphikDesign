@@ -65,7 +65,7 @@ const Voxel = () => {
 
 const FirstCanvas = () => {
     return (
-        <div className='w-full h-screen absolute inset-0'>
+        <div className='w-full h-screen absolute inset-0 bg-slate-100'>
             <Canvas camera={{
                 position: [0, 0, 6]
             }}>
