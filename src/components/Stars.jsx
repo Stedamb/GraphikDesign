@@ -65,7 +65,7 @@ const Voxel = () => {
 
 const FirstCanvas = () => {
     return (
-        <div className='w-full h-screen absolute inset-0 bg-slate-100'>
+        <div className='w-full h-[0] absolute inset-0 bg-slate-100'>
             <Canvas camera={{
                 position: [0, 0, 6]
             }}>
@@ -81,6 +81,9 @@ const FirstCanvas = () => {
 
                 <Preload all/>
             </Canvas>
+            <iframe width="100%" height="1000"
+        src="https://www.youtube.com/embed/nsdvQuZIPYg">
+        </iframe>
         </div>
     );
 };
