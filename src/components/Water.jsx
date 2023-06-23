@@ -31,7 +31,7 @@ const Stars = (props) => {
 
 const Voxel = () => {
     const mesh = useRef();
-    const voxel = useGLTF("./water.gltf");
+    const voxel = useGLTF("./Acqua.gltf");
 
     useFrame(() => {
         if (!mesh.current) {
@@ -55,8 +55,8 @@ const Voxel = () => {
             <primitive
                 object={voxel.scene}
                 scale={0.1}
-                position={[0,-2.5,0]}
-                rotation={[0, 2.5, 0]}
+                position={[0,-1,0]}
+                rotation={[0, 1.5, 0]}
             />
         </mesh>
     )

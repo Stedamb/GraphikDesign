@@ -11,10 +11,10 @@ const Section = () => {
                     <h1 className="space-grotesk text-5xl text-white">
                         Coming soon!
                     </h1>
-                    <p className="text-lg text-white w-screen p-5">
+                    <p className="text-lg text-white w-screen p-6 max-w-3xl">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel porro quidem atque deserunt aspernatur nihil corporis consectetur harum, iste repudiandae soluta necessitatibus laborum corrupti eius ad omnis nulla ullam maiores!
                     </p>
-                    <p className="text-lg text-white w-screen p-5 mb-10">
+                    <p className="text-lg text-white w-screen p-6 max-w-3xl mb-10">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel porro quidem atque deserunt aspernatur nihil corporis consectetur harum, iste repudiandae soluta necessitatibus laborum corrupti eius ad omnis nulla ullam maiores!
                     </p>
                     <a href="#hero" className="bg-black border text-white my-5 p-8 text-xl rounded-full">

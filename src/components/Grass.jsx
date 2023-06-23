@@ -31,7 +31,7 @@ const Stars = (props) => {
 
 const Voxel = () => {
     const mesh = useRef();
-    const voxel = useGLTF("./grass.gltf");
+    const voxel = useGLTF("./Erba.gltf");
 
     useFrame(() => {
         if (!mesh.current) {
